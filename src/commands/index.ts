@@ -1,3 +1,5 @@
 import Command from '../api/command';
 
-export const commands: Command[] = [];
+import { help } from './help';
+
+export const commands: Command[] = [help];

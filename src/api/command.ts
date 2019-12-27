@@ -1,7 +1,7 @@
 import Discord from 'discord.js';
 import * as config from '../config.json';
 
-class Command {
+export default class Command {
   readonly aliases: string[];
   readonly desc: string;
   readonly admin: boolean;
@@ -43,5 +43,3 @@ class HelpMessage {
     this.admin = admin;
   }
 }
-
-export default Command;
