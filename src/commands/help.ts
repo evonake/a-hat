@@ -4,6 +4,10 @@ import Command from '../api/command';
 
 import { commands } from './index';
 
+const aliases = ['help', 'h'];
+const desc = 'sends help message';
+const admin = false;
+
 function run(
   args: string[],
   msg: Discord.Message,
@@ -14,19 +18,17 @@ function run(
     .setTitle('Help Message');
 
   for (const command of commands) {
+    const helpMsg = command.help();
+    const perms = helpMsg.admin;
+
+    // admin commands are italicized
     embedMsg.addField(
-      command.help().aliases.join(', '),
-      `${command.help().admin ? 'Needs Admin Perms\n' : ''}
-      ${command.help().desc}`
+      `${perms ? '_' : ''}${helpMsg.aliases.join(', ')}${perms ? '_' : ''}`,
+      helpMsg.desc
     );
   }
 
   msg.channel.send(embedMsg);
 }
 
-export const help = new Command(
-  ['help', 'h'],
-  'sends help message',
-  false,
-  run
-);
+export const help = new Command(aliases, desc, admin, run);
