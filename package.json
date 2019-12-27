@@ -1,0 +1,26 @@
+{
+  "name": "typescriptbot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./lib/index.js",
+  "scripts": {
+    "start": "tsc && node ."
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^12.12.12",
+    "discord.js": "^11.5.1",
+    "ffmpeg": "0.0.4",
+    "opusscript": "0.0.7",
+    "ytdl-core": "^1.0.1"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^2.8.0",
+    "@typescript-eslint/parser": "^2.8.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-config-prettier": "^6.7.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "prettier-eslint": "^9.0.1"
+  }
+}
